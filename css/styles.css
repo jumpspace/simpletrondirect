@@ -1,0 +1,9 @@
+/* styles.css */
+* {
+	font-family: Calibri, Verdana, Sans-Serif;
+	background-color: beige;
+}
+
+#addrloc {
+	display: inline-block;
+}

@@ -1,0 +1,31 @@
+<!doctype "html">
+<!-- Simpletron Machine Language Direct Input -->
+<!-- ======================================== -->
+<!-- This is a small input utility to enter   -->
+<!-- Simpletron program and data directly.    -->
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<title>:: Simpletron Input ::</title>
+</head>
+
+<body>
+	<header>
+		<h1>Simpletron Direct Input</h1>
+		<p>Use this interface to enter Simpletron code and data. Once complete, this interface will save your entered
+			code into a JSON file.</p>
+	</header>
+	<form method="post" action="">
+		<fieldset id="codeentry">
+			<legend>Enter your Simpletron instruction codes here</legend>
+			<label for="addrloc" id="addrloclbl">Address:<div id="addrloc">(hex address goes here)</div></label><br />
+			<label for="instcode" id="instcodelbl">Instruction/Code: <input type="text" id="instcode" /></label>
+		</fieldset>
+		<input type="submit" id="submit" name="submit" />
+	</form>
+</body>
+
+</html>
