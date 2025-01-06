@@ -19,10 +19,15 @@
 			code into a JSON file.</p>
 	</header>
 	<form method="post" action="">
-		<fieldset id="codeentry">
+		<fieldset id="codeentry" class="codedata">
 			<legend>Enter your Simpletron instruction codes here</legend>
-			<label for="addrloc" id="addrloclbl">Address:<div id="addrloc">(hex address goes here)</div></label><br />
+			<label for="addrloc" id="addrloclbl">Address: <div id="addrloc">(hex address goes here)</div></label><br />
 			<label for="instcode" id="instcodelbl">Instruction/Code: <input type="text" id="instcode" /></label>
+		</fieldset>
+		<fieldset id="entrydisp" class="codedata" disabled>
+			<legend>What you entered is displayed here</legend>
+			<textarea cols="35" rows="35" class="codedisplay" placeholder="Code and instructions displayed here. . .">
+			</textarea>
 		</fieldset>
 		<input type="submit" id="submit" name="submit" />
 	</form>

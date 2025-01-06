@@ -7,3 +7,14 @@
 #addrloc {
 	display: inline-block;
 }
+
+.codedata {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+}
+
+.codedisplay {
+	text-align: left;
+}
