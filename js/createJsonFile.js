@@ -1,4 +1,5 @@
 // createJsonFile.js
+let smlJson = { "sml": [] };
 let smlCode = [];
 
 function updateAddrLoc() {
