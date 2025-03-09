@@ -11,9 +11,15 @@ function updateAddrLoc() {
 function insertSml() {
     'use strict';
 
+    let addrloc = document.getElementById('addrloc').value;
+    let instcode = document.getElementById('instcode').value;
+    let codelines = document.getElementById('codelines');
+
+    codelines.value = codelines.value + "...";
+
     smlCode.push({
-        "addr": document.getElementById('addrloc').value,
-        "code": document.getElementById('instcode').value
+        "addr": addrloc,
+        "code": instcode
     });
 }
 
