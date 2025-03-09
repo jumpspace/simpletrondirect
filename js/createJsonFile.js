@@ -1,6 +1,7 @@
 // createJsonFile.js
 let smlJson = { "sml": [] };
 let smlCode = [];
+let startAddr = 256;
 
 function updateAddrLoc() {
     'use strict';
@@ -15,7 +16,7 @@ function insertSml() {
     let instcode = document.getElementById('instcode').value;
     let codelines = document.getElementById('codelines');
 
-    codelines.value = codelines.value + "...";
+    codelines.value = codelines.value + addrloc + " -> " + instcode + "\r\n";
 
     smlCode.push({
         "addr": addrloc,
@@ -33,9 +34,7 @@ function init() {
 
     if (document && document.getElementById) {
         let codeForm = document.getElementById('codeform');
-        document.getElementById('addrloc').value = '';
-
-        codeForm.onsubmit = serializeJson
+        //document.getElementById('addrloc').value = startAddr.toString(16);
     }
 }
 
