@@ -1,18 +1,23 @@
 // createJsonFile.js
-let smlJson = { "sml": [] };
 let smlCode = [];
 let startAddr = 256;
+let nextAddr = 0;
+let fourDigitHex = 4096;
 
-function updateAddrLoc() {
+function updateAddrLoc(loc) {
     'use strict';
 
-
+    let intLoc = parseInt(loc, 16);
+    intLoc += 1;
+    let addrLocDisp = (intLoc < fourDigitHex) ? "0".toString() + intLoc.toString(16) : intLoc.toString(16);
+    document.getElementById('addrloc').innerText = intLoc.toString(16);
+    document.getElementById('instcode').value = "";
 }
 
 function insertSml() {
     'use strict';
 
-    let addrloc = document.getElementById('addrloc').value;
+    let addrloc = document.getElementById('addrloc').innerText;
     let instcode = document.getElementById('instcode').value;
     let codelines = document.getElementById('codelines');
 
@@ -22,11 +27,14 @@ function insertSml() {
         "addr": addrloc,
         "code": instcode
     });
+
+    updateAddrLoc(addrloc);
 }
 
 function serializeJson() {
-    //TODO: convert Javaacript array into JSON document.
-
+    // convert Javascript array into JSON document.
+    let smlJson = { "sml": smlCode };
+    let jsonFile = JSON.stringify(smlJson);
 }
 
 function init() {
@@ -34,7 +42,12 @@ function init() {
 
     if (document && document.getElementById) {
         let codeForm = document.getElementById('codeform');
-        //document.getElementById('addrloc').value = startAddr.toString(16);
+
+        // Display address location as 4-digit hex value, with leading 0 for values less than 0x1000
+        let startAddrDisp = (startAddr < fourDigitHex) ? "0".toString() + startAddr.toString(16) : startAddr.toString(16);
+        document.getElementById('addrloc').innerText = startAddrDisp;
+
+
     }
 }
 
