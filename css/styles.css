@@ -17,4 +17,7 @@
 
 .codedisplay {
 	text-align: left;
+	resize: none;
+	height: 350px;
+	max-height: 350px;
 }
